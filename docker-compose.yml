@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: neurix
+      POSTGRES_PASSWORD: neurix
+      POSTGRES_DB: neurix
+    ports:
+      - "5432:5432"
+    volumes:
+      - neurix_pg:/var/lib/postgresql/data
+
+volumes:
+  neurix_pg:
